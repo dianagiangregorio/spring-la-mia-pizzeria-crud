@@ -14,25 +14,23 @@
     <main class="container">
         <section class="row">
             <div class="col-12">
-                <h1>
+                <h1 class="text-center">
                     La mia pizzeria
                 </h1>
-                <table class="table mb-3" th:if="${pizze.size() > 0}">
-                    <thead>
-                      <tr>
-                        <th>Nome</th>
-                        <th>Descrizione</th>
-                        <th>Prezzo</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="pizza : ${pizze}" th:object="${pizza}">
-                            <td th:text="*{nome}"/>
-                            <td th:text="*{descrizione}"/>
-                            <td th:text="*{prezzo}"/>
-                        </tr>
-                    </tbody>
-                  </table>   
+                <div class="row" th:if="${pizze.size() > 0}">
+                    <div class="col-md-4 mb-3" th:each="pizza : ${pizze}" th:object="${pizza}">
+                        <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title" th:text="*{nome}"/>
+                              <p class="card-text" th:text="*{descrizione}"/>
+                              <h5 class="card-title" th:text="*{prezzo}"/>
+                              <a href="#" class="btn btn-primary">Prenota</a>
+                            </div>
+                          </div>
+                    </div>
+
+                </div>  
                   <h3 class="alert alert-warning" th:unless="${pizze.size() > 0}">
                     Non ci sono pizze disponibili
                   </h3>         
