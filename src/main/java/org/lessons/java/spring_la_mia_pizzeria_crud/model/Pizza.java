@@ -23,8 +23,8 @@ public class Pizza {
     @Lob
     private String descrizione;
 
-    @NotBlank
-    private String fotoUrl;
+    // @NotBlank
+    // private String pizzaImage;
 
     @NotBlank
     private float prezzo;
@@ -46,13 +46,13 @@ public class Pizza {
         this.descrizione = descrizione;
     }
 
-    public String fotoUrl() {
-        return this.fotoUrl;
-    }
+    // public String getpizzaImage() {
+    //     return this.pizzaImage;
+    // }
 
-    public void setFotoUrl(String fotoUrl) {
-        this.fotoUrl = fotoUrl;
-    }
+    // public void setpizzaImage(String pizzaImage) {
+    //     this.pizzaImage = pizzaImage;
+    // }
 
     public float getPrezzo() {
         return this.prezzo;
@@ -62,9 +62,10 @@ public class Pizza {
         this.prezzo = prezzo;
     }
 
+
     @Override
     public String toString(){
-        return String.format("nome %s, descrizione %s, prezzo %s", this.nome, this.descrizione, this.prezzo);
+        return String.format(" nome %s, descrizione %s, prezzo %s", this.nome, this.descrizione, this.prezzo);
     }
     
 }

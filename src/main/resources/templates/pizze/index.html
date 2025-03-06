@@ -8,7 +8,7 @@
 
 <body>
     <header class="container">
-        <nav th:replace="~{fragments/navbar :: navbar('Home')}"></nav>
+        <nav th:replace="~{fragments/navbar :: navbar('Pizze')}"></nav>
     </header>
 
     <main class="container">
@@ -18,16 +18,18 @@
                     La mia pizzeria
                 </h1>
                 <div class="row" th:if="${pizze.size() > 0}">
-                    <div class="col-md-4 mb-3" th:each="pizza : ${pizze}" th:object="${pizza}">
+                    <div class="d-flex justify-content-center col-md-4 mb-3" th:each="pizza : ${pizze}" th:object="${pizza}">
                         <div class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8vaJi1zTwmYI88dbj0hbmVhexO-wKNML9SA&s" class="card-img-top" alt="Immagine pizza"/>
                             <div class="card-body">
                               <h5 class="card-title" th:text="*{nome}"/>
                               <p class="card-text" th:text="*{descrizione}"/>
                               <h5 class="card-title" th:text="*{prezzo}"/>
-                              <a href="#" class="btn btn-primary">Prenota</a>
+                              <p>
+                                <a th:href="@{/pizze}" class="btn btn-primary">Dettagli</a>
+                              </p>
                             </div>
-                          </div>
+                        </div>
                     </div>
 
                 </div>  
