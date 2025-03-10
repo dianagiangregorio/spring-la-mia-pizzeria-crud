@@ -17,11 +17,16 @@
                 <h1 class="text-center">
                     La mia pizzeria
                 </h1>
-                <div class="container mx-auto p-2" style="width: 500px;">
+                <div class="d-flex justify-content-between p-2">
+                  <div>
                     <form class="d-flex" role="search" action="/pizze/search" method="get">
                     <input class="form-control me-2" type="search" name="query" placeholder="Cerca la tua pizza" aria-label="Cerca">
                     <button class="btn btn-outline-success" type="submit">Cerca</button>
                   </form>
+                </div>
+                  <a class="btn btn-primary" th:href="@{/pizze/create}">
+                    Crea una nuova pizza
+                  </a>
                 </div>
                 <div class="row" th:if="${pizze.size() > 0}">
                     <div class="d-flex justify-content-center col-md-4 mb-3" th:each="pizza : ${pizze}" th:object="${pizza}">
