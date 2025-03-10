@@ -29,6 +29,13 @@ public class Pizza {
     @NotBlank
     private float prezzo;
 
+    public Integer id() {
+        return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return this.nome;
@@ -61,7 +68,7 @@ public class Pizza {
     public void setPrezzo(float prezzo) {
         this.prezzo = prezzo;
     }
-
+    
 
     @Override
     public String toString(){
